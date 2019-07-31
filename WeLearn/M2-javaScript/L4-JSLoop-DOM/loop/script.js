@@ -1,34 +1,15 @@
-const names = ['Alice', 'Bob', 'Charlie', 'Deborah', 'Evan'];
 
+var isl = [1,3,2,4,1,3,1,4,5,2,2,1,4,2,2];
 
+let start;
+let end;
 
-for (let i = 0; i < names.length; i++){
-  console.log(names[i]);
+for (let i = 0; i < isl.length; i++) {
+  let start = isl[0];
+  if(start > isl[i+1]){
+    start = i;
+  } else {
+    end = i;
+  }
 }
-
-names.forEach((name) => {
-  console.log(name);
-})
-
-let sum = 0;
-
-let numbers = [1,2,3,4,5,6,7,8,9,10];
-
-
-const findTotal = ((item) => {
-  sum += item;
-});
-
-numbers.forEach(findTotal);
-
-console.log(sum);
-
-const buttons = document.querySelectorAll('Button');
-const box = document.querySelector('#box');
-
-buttons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const color = button.innerHTML;
-    box.style.background = color;
-  });
-});
+console.log(start + " " + end);
